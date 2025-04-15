@@ -8,8 +8,6 @@ class Node{
         this.data=data;
         next=null;
     }
-
-
 }
 public class LinkedList {
     
@@ -46,7 +44,7 @@ public class LinkedList {
     public void addFirst(int data) {
         Node newNode = new Node(data);
         newNode.next = head; // pehle waale head ko newNode ka next banate hain
-        head = newNode;     // head ko update karte hain
+        head = newNode;     
     }
 
     public void delete(int data){
@@ -59,6 +57,6 @@ public class LinkedList {
         }
     }
     public void addLast(int data){
-        
+
     }
 }
