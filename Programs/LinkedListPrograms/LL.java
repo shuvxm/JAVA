@@ -74,6 +74,35 @@ public class LL {
         size++;
     }
 
+    public Node get(int index){
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public int deleteFirst(){
+        int data = head.data;
+        head = head.next;
+        if (head == null) {
+            tail = null;
+        }
+        size--;
+        return data;    
+    }
+
+    public int deleteLast(){
+        if (size <= 1) {
+            return deleteFirst();
+        }
+        Node secondLast = get(size - 2);
+        int data = tail.data;
+        tail = secondLast;
+        tail.next = null;
+        return data;
+    }
+
     public void display(){
         Node temp = head;
         while (temp != null) {
