@@ -15,6 +15,11 @@ public class LL {
             this.data=data;
             this.next=next;
         }
+
+        @Override
+    public String toString() {
+        return "Node{" + "data=" + data + '}';
+    }
     }
 
 
@@ -74,14 +79,6 @@ public class LL {
         size++;
     }
 
-    public Node get(int index){
-        Node node = head;
-        for (int i = 0; i < index; i++) {
-            node = node.next;
-        }
-        return node;
-    }
-
     public int deleteFirst(){
         int data = head.data;
         head = head.next;
@@ -102,6 +99,39 @@ public class LL {
         tail.next = null;
         return data;
     }
+    public int delete(int index){
+        if (index == 0) {
+            return deleteFirst();
+        }
+        if (index == size-1) {
+            return deleteLast();
+        }
+        Node prev = get(index -1);
+        int data = prev.next.data;
+
+        prev.next = prev.next.next;
+        size--;
+        return data;
+    }
+
+    public Node get(int index){
+        Node node = head;
+        for (int i = 0; i < index; i++) {
+            node = node.next;
+        }
+        return node;
+    }
+
+    public Node find(int data){
+        Node node = head;
+        while (node != null) {
+            if (node.data == data) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
 
     public void display(){
         Node temp = head;
@@ -111,7 +141,4 @@ public class LL {
         }
         System.out.println();
     }
-
-
- 
 }
