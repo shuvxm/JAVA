@@ -5,11 +5,20 @@ public class Main {
         
         Stack nums = new Stack();
 
-        nums.push(10);
-        nums.push(20);
-        nums.push(30);
-        nums.push(40);
+        nums.pop();
 
-        System.out.println(nums);
+        // nums.push(10);
+        // nums.push(30);
+        // System.out.println(nums.pop());
+        // nums.push(40);
+        // nums.push(20);
+        // System.out.println(nums.peek());
+        // nums.push(20);
+        // nums.push(90);
+        // System.out.println(nums.peek());
+        
+        nums.printStack();
+
+        
     }
 }
