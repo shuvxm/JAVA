@@ -1,0 +1,116 @@
+# Leetcode 217. Contains Duplicate
+
+import java.util.HashSet;
+
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        // create a hashset to store elements from the array.
+        HashSet<Integer> seenNumbers = new HashSet<>();
+
+        // Iterate through each element in the array
+        for(int num: nums){
+            if(seenNumbers.contains(num)){
+                return true; // duplicate found
+            }
+            // if num is not present in collection then add it.
+            else {
+                seenNumbers.add(num);
+            }
+        }
+        return false; // Duplicate not found
+    }
+}
+
+-------------------------------------------------------
+
+# Leetcode 242. Valid Anagram (check with string)
+
+import java.util.Arrays;
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+
+        // if the lengths are different, they can't be anangram
+        if(s.length() != t.length())
+            return false;
+
+        // convert string to char Array and then sort them     
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+
+        Arrays.sort(sArray);
+        Arrays.sort(tArray);
+
+        // compare sorted arrays
+        return Arrays.equals(sArray,tArray);
+    }
+}
+
+# or use efficiency array
+
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if (s.length() != t.length()) return false;
+
+        int[] count = new int[26]; // Array to store character counts
+
+        // Process both strings in a single loop
+        for (int i = 0; i < s.length(); i++) {
+            count[s.charAt(i) - 'a']++; // Increment count for s
+            count[t.charAt(i) - 'a']--; // Decrement count for t
+        }
+
+        // If all counts are zero, s and t are anagrams
+        for (int c : count) {
+            if (c != 0) return false;
+        }
+        return true;
+
+    }
+}
+
+-------------------------------------------------------
+# Leetcode 1. Two Sum problem
+
+#BFA
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for(int i=0; i<nums.length;i++){
+            for(int j=i+1; j<nums.length;j++){
+                if(nums[i]+nums[j] == target){
+                    return new int[]{i,j}; // Return both indices
+                }
+            }
+        }
+        return new int[]{}; // Return empty array if no match found
+
+    }
+}
+# Efficient approach
+
+import java.util.*;
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // create a HashMap to store the nums and their indices
+       Map<Integer, Integer> map = new HashMap<>();
+
+       for(int i=0; i<nums.length;i++)
+       {
+        // calculate the complement of the number
+        int complement = target - nums[i];
+
+        // check if the complement is already in map
+        if(map.containsKey(complement)){
+            // if found, return indices of the complement and the current no
+            return new int[] {map.get(complement), i};
+        }
+        // otherwise add the current no and their indices into the colection
+        map.put(nums[i], i);
+
+       }
+       return new int[]{};
+    }
+}
+-------------------------------------------------------
+14 mins 

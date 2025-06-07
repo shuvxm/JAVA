@@ -23,7 +23,7 @@ public class Encapsulation {
         System.out.println("helo");
 
         Programmer p = new Programmer("xyz");
-        System.out.println(p.getName());
+        System.out.println(p.getName()); // xyz
         p.setName("Simoga");
         System.out.println(p.getName());
         
