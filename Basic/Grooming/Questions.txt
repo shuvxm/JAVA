@@ -1,0 +1,42 @@
+# Number programs:
+1. swap the given 2 nos without 3rd varianle
+2. convert Binary to Decimal
+3. LCM
+4. Prime Number
+5. Fibonacci Series
+6. Strong Number
+7. ArmStrong Number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// static void binaryToDecimal(String binary) {
+// int decimalNumber = 0;
+// int power = 0;
+// for (int i = binary.length() - 1; i >= 0; i--) {
+// char digitchar = binary.charAt(i);
+// int digit = Character.getNumericValue(digitchar);
+// if (digit == 1) {
+// decimalNumber = (int) (decimalNumber + Math.pow(2, power));
+// }
+// power++;
+// }
+// System.out.println(decimalNumber);
+// }
